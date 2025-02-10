@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: easy-planner
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    default-schema: ${spring.datasource.currentSchema}
+  datasource:
+    url: jdbc:postgresql://localhost:54322/easy_planner
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    currentSchema: easy_planner
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: ${spring.datasource.currentSchema}
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
