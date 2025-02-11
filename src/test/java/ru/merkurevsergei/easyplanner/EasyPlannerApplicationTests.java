@@ -1,4 +1,4 @@
-package ru.merkurevsergei.easy_planner;
+package ru.merkurevsergei.easyplanner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

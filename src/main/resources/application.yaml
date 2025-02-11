@@ -25,4 +25,6 @@ spring:
         format_sql: true
         default_schema: ${spring.datasource.currentSchema}
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: UTC
     open-in-view: false
