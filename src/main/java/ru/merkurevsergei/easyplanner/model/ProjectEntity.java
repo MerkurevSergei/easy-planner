@@ -33,6 +33,10 @@ public class ProjectEntity {
 
     private String status;
 
+    private Integer isId;
+
+    private String isCode;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 

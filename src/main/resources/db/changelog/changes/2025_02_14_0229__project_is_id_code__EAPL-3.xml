@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Merkurev Sergei" id="2025_02_14_0229__project_is_id_code__EAPL-3">
+        <addColumn tableName="project">
+            <column name="is_id" type="INTEGER" remarks="Идентификатор информационной системы"/>
+            <column name="is_code" type="VARCHAR(255)" remarks="Код информационной системы"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
