@@ -6,5 +6,6 @@
 
     <include file="/db/changelog/changes/2025_02_12_0212__project_table__EAPL-1.xml"/>
     <include file="/db/changelog/changes/2025_02_14_0229__project_is_id_code__EAPL-3.xml"/>
+    <include file="/db/changelog/changes/2025_02_16_0258__feature_table__EAPL-4.xml"/>
 
 </databaseChangeLog>
