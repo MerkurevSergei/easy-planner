@@ -29,7 +29,6 @@ public class ProjectService {
 
     public ProjectEntity updateProject(UUID projectId, ProjectEntity updatedProjectEntity) {
         if (projectRepository.existsById(projectId)) {
-            //updatedProject.setId(projectId);
             return projectRepository.save(updatedProjectEntity);
         }
         return null;
