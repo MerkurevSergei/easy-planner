@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet author="Merkurev Sergei" id="2025_02_16_0258__user_table__EAPL-5">
+    <changeSet author="Merkurev Sergei" id="2025_02_17_0413__user_table__EAPL-5">
         <createTable tableName="user" remarks="Пользователь">
             <column name="login" type="VARCHAR(50)" remarks="Логин">
                 <constraints primaryKey="true" primaryKeyName="user_pkey" nullable="false"/>

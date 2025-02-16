@@ -1,0 +1,39 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Merkurev Sergei" id="2025_02_17_0456__task_table__EAPL-7">
+        <createTable tableName="task" remarks="Задача в рамках функционала">
+            <column name="id" type="UUID" defaultValueComputed="gen_random_uuid()" remarks="Первичный ключ задачи">
+                <constraints primaryKey="true" primaryKeyName="task_pkey" nullable="false"/>
+            </column>
+            <column name="feature_id" type="UUID" remarks="Ссылка на функционал проекта">
+                <constraints nullable="false" foreignKeyName="fk_task_feature" references="feature(id)"/>
+            </column>
+            <column name="parent_task_id" type="UUID" remarks="Ссылка на родительскую задачу">
+                <constraints foreignKeyName="fk_task_parent_task" references="task(id)"/>
+            </column>
+            <column name="title" type="VARCHAR(255)" remarks="Наименование">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT" remarks="Описание"/>
+            <column name="priority" type="INT" remarks="Приоритет"/>
+            <column name="assignee_id" type="VARCHAR(50)" remarks="Исполнитель">
+                <constraints foreignKeyName="fk_task_assignee" references="user(login)"/>
+            </column>
+            <column name="start_date" type="DATE" remarks="Дата начала работы над задачей"/>
+            <column name="due_date" type="DATE" remarks="Дата окончания работы над задачей"/>
+            <column name="created_by" type="VARCHAR(50)" remarks="Кто создал задачу">
+                <constraints nullable="false" foreignKeyName="fk_task_created_at" references="user(login)"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

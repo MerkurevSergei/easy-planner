@@ -13,7 +13,6 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class FeatureService {
 
-
     private final FeatureRepository featureRepository;
 
     public List<FeatureEntity> findAll() {
